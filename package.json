@@ -52,9 +52,7 @@
   },
   "lint-staged": {
   "**/*.{js,jsx}": [
-    "eslint"
+    "eslint --max-warnings=0"
   ]
 }
-
-
 }
