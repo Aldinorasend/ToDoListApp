@@ -27,7 +27,9 @@ const unused = 'test'; // sengaja unused
 
 const unused1 = 'test';
 
-const errorTest = arkokaos
+const errorTest = a;
+
+const errorTest1 = a;
 
 
 TodoItem.propTypes = {
