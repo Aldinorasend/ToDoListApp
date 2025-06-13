@@ -21,6 +21,9 @@ export default function TodoItem({ todo, onToggle, onDelete }) {
   );
 }
 
+const x =    1;
+
+
 TodoItem.propTypes = {
   todo: PropTypes.shape({
     text: PropTypes.string.isRequired,
