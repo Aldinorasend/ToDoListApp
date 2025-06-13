@@ -1,4 +1,4 @@
-name: Integration Test
+name: Vite React Integration Test
 
 on: [push, pull_request]
 
@@ -6,19 +6,21 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    services:
-      postgres:  # Jika menggunakan database
-        image: postgres:14
-        env:
-          POSTGRES_PASSWORD: password
-        ports:
-          - 5432:5432
+    strategy:
+      matrix:
+        node-version: [18.x]
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - run: npm install
-      - run: npm test  # Jalankan test suite
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run Integration Tests
+      run: npm test -- --watchAll=false
