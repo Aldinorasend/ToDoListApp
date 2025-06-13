@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <div className="p-6 max-w-lg mx-auto">
-      <h1 className="text-3xl font-bold mb-4">To-Do List</h1>
+      <h1 className="text-3xl font-bold mb-4">To-Do Lis</h1>
       <div className="flex gap-2 mb-4">
         <input
           type="text"
