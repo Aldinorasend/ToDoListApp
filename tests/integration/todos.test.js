@@ -1,21 +1,20 @@
-const request = require('supertest');
-const app = require('../../app'); // Import Express app
-const db = require('../../models'); // Import model database
+import { render, screen } from '@testing-library/react';
+import App from '../../src/App'; // Pastikan path ini benar
+import { render, screen, fireEvent } from '@testing-library/react';
+import Home from '../../src/pages/Home';
 
-describe('Todo API Integration Tests', () => {
-  beforeAll(async () => {
-    await db.sequelize.sync({ force: true }); // Reset database sebelum testing
+describe('App Integration Test', () => {
+  it('renders the Todo List header', () => {
+    render(<App />);
+    expect(screen.getByText(/todo list/i)).toBeInTheDocument(); // Sesuaikan dengan teks di komponen Anda
   });
 
-  it('should create a new todo', async () => {
-    const res = await request(app)
-      .post('/todos')
-      .send({ title: 'Test Todo', completed: false });
-    expect(res.statusCode).toEqual(201);
-    expect(res.body).toHaveProperty('id');
-  });
 
-  afterAll(async () => {
-    await db.sequelize.close(); // Tutup koneksi database
+test('adds a new todo', () => {
+  render(<Home />);
+  const input = screen.getByPlaceholderText(/add todo/i);
+  fireEvent.change(input, { target: { value: 'Belajar Jest' } });
+  fireEvent.click(screen.getByText(/submit/i));
+  expect(screen.getByText(/belajar jest/i)).toBeInTheDocument();
   });
 });
