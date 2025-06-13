@@ -25,6 +25,7 @@ const unusedVariable = 123
 
 const unused = 'test'; // sengaja unused
 
+const unused1 = 'test';
 
 TodoItem.propTypes = {
   todo: PropTypes.shape({
