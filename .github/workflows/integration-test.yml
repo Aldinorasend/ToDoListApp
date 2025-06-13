@@ -24,3 +24,7 @@ jobs:
 
     - name: Run Integration Tests
       run: npm test
+
+    - name: Run Lint
+      run: npm run lint
+
