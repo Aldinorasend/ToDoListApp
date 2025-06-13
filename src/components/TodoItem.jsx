@@ -21,7 +21,8 @@ export default function TodoItem({ todo, onToggle, onDelete }) {
   );
 }
 
-const x =    1;
+const unusedVariable = 123
+
 
 
 TodoItem.propTypes = {
