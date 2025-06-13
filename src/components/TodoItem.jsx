@@ -12,18 +12,14 @@ export default function TodoItem({ todo, onToggle, onDelete }) {
         {todo.text}
       </div>
       <button
-        // onClick={onDelete}
+        onClick={onDelete}
         className="ml-2 text-red-500 hover:text-red-700"
       >
         Delete
       </button>
     </div>
   );
-}
-
-const unusedVariable = 123
-
-
+} 
 
 TodoItem.propTypes = {
   todo: PropTypes.shape({
