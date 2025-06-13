@@ -27,6 +27,9 @@ const unused = 'test'; // sengaja unused
 
 const unused1 = 'test';
 
+const errorTest = arkokaos
+
+
 TodoItem.propTypes = {
   todo: PropTypes.shape({
     text: PropTypes.string.isRequired,
