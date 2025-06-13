@@ -12,7 +12,7 @@ export default function TodoItem({ todo, onToggle, onDelete }) {
         {todo.text}
       </div>
       <button
-        // onClick={onDelete}
+        onClick={onDelete}
         className="ml-2 text-red-500 hover:text-red-700"
       >
         Delete
@@ -20,17 +20,6 @@ export default function TodoItem({ todo, onToggle, onDelete }) {
     </div>
   );
 }
-
-const unusedVariable = 123
-
-const unused = 'test'; // sengaja unused
-
-const unused1 = 'test';
-
-const errorTest = a;
-
-const errorTest1 = a;
-
 
 TodoItem.propTypes = {
   todo: PropTypes.shape({

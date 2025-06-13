@@ -51,7 +51,8 @@
     "vitest": "^1.6.1"
   },
   "lint-staged": {
-  "**/*.{js,jsx}": "eslint --format stylish"
+  "**/*.{js,jsx}": [
+    "eslint --max-warnings=0"
+  ]
 }
-
 }
